@@ -3,7 +3,7 @@
 #include "../include/Card.hpp"
 
 void Card::loadTexture() {
-if (!background.loadFromFile(this->filepath)) {
+    if (!background.loadFromFile(this->filepath)) {
         throw std::runtime_error(std::format("Card Background Image '{}' not found !", this->filepath));
     }
     sprite.setTexture(background, true);
