@@ -39,7 +39,6 @@ commitDescriptions=(
 )
 
 for type in "${commitTypes[@]}"; do
-    echo $type
     regex="^\[$type\] : .+$"
     if [[ "$commitMsg" =~ $regex ]]; then
         exit 0
