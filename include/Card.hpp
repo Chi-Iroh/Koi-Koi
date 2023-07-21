@@ -77,12 +77,12 @@ enum class Month {
 
 enum class CardType {
     Invalid,
-    Chaff,
+    Basic,
     Earth,
     Light,
     PlainScroll,
-    RedScroll = PlainScroll,
-    BlueScroll = PlainScroll
+    RedScroll,
+    BlueScroll
     // There shouldn't be anything after BlueScroll, otherwise it will break the following function
 };
 
