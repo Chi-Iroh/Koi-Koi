@@ -45,9 +45,9 @@ for type in "${commitTypes[@]}"; do
     fi
 done
 
-echo "Commit name '$commitMsg' doesn't start with '[TYPE] : ', where TYPE is :"
+echo "Commit name '$commitMsg' doesn't start with '[TYPE] : ', where TYPE is :" >&2
 for ((i=0; i<${#commitTypes[@]}; i++)); do
-    echo -e "\t- ${commitTypes[i]} : ${commitDescriptions[i]}"
+    echo -e "\t- ${commitTypes[i]} : ${commitDescriptions[i]}" >&2
 done
 exit 1
 
