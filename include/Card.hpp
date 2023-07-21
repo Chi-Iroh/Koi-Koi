@@ -1,5 +1,6 @@
 #pragma once
 #include <array>
+#include <optional>
 #include <string_view>
 #include <type_traits>
 #include <SFML/Graphics.hpp>
@@ -104,6 +105,7 @@ constexpr sf::Vector2<T> CARD_SIZE{ CARD_WIDTH<T>, CARD_HEIGHT<T> };
 
 class Card : public sf::Drawable {
 private:
+    std::optional<std::reference_wrapper<const sf::RenderWindow>> parentWindow;
     std::string filepath;
     Month month{};
     CardType type{};
@@ -118,12 +120,18 @@ private:
     void draw(sf::RenderTarget& target, sf::RenderStates settings) const;
 
 public:
-    explicit Card(const std::string& filepath, const sf::Vector2f& position = {});
-    explicit Card(const std::string_view& filepath, const sf::Vector2f& position = {});
+    explicit Card(const sf::RenderWindow& parentWindow, const std::string& filepath, const sf::Vector2f& position = {});
+    explicit Card(const sf::RenderWindow& parentWindow, const std::string_view& filepath, const sf::Vector2f& position = {});
     Card();
 
     Card& operator=(const Card& other);
 
     Month getMonth() const;
     CardType getType() const;
+
+    sf::Vector2f getPosition() const;
+    void setPosition(const sf::Vector2f& newPosition);
+    void move(const sf::Vector2f& vector);
+
+    bool isClicked() const;
 };
