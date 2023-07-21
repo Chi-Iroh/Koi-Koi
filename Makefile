@@ -1,6 +1,7 @@
 VPATH	=	src/
 
 SRC 	=					\
+Card.cpp					\
 Main.cpp
 
 OBJ =   $(addprefix obj/, $(SRC:.cpp=.o))
