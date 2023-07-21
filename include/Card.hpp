@@ -87,7 +87,7 @@ enum class CardType {
 };
 
 constexpr bool isScroll(CardType cardType) {
-    return cardType > CardType::PlainScroll;
+    return cardType >= CardType::PlainScroll;
 }
 
 template<typename T>
