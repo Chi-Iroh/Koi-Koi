@@ -80,10 +80,15 @@ enum class CardType {
     Chaff,
     Earth,
     Light,
-    PlainScroll = 1 << 2,
-    RedScroll = PlainScroll | 1,
-    BlueScroll = PlainScroll | 2,
+    PlainScroll,
+    RedScroll = PlainScroll,
+    BlueScroll = PlainScroll
+    // There shouldn't be anything after BlueScroll, otherwise it will break the following function
 };
+
+constexpr bool isScroll(CardType cardType) {
+    return cardType > CardType::PlainScroll;
+}
 
 template<typename T>
 requires std::is_arithmetic_v<T>
