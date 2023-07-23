@@ -12,7 +12,7 @@ DrawPile::DrawPile(std::initializer_list<Card> cards) :
 {}
 
 Card DrawPile::draw() {
-    static unsigned lastIndex{ N_DRAW_PILE_CARDS - 1 };
+    static unsigned lastIndex{ DECK_SIZE - 1 };
 
     if (lastIndex == 0) {
         throw std::out_of_range("Attempt to draw a card from an empty pile !");
