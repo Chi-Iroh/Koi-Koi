@@ -8,7 +8,7 @@ int main() {
     sf::RenderWindow window{
         windowSize,
         "Koi-Koi",
-        sf::Style::Default,
+        sf::Style::Titlebar | sf::Style::Close,
     };
     std::array<Card, N_CARDS> cards {};
 
