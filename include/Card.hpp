@@ -101,7 +101,7 @@ constexpr T CARD_WIDTH{ 56 };
 
 template<typename T>
 requires std::is_arithmetic_v<T>
-constexpr sf::Vector2<T> CARD_SIZE{ CARD_WIDTH<T>, CARD_HEIGHT<T> };
+static const sf::Vector2<T> CARD_SIZE{ CARD_WIDTH<T>, CARD_HEIGHT<T> };
 
 class Card : public sf::Drawable {
 private:
