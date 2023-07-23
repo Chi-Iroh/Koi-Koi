@@ -5,8 +5,6 @@
 
 class DrawPile : public Deck<40> {
 private:
-    std::array<Card, DECK_SIZE> cards{};
-
     std::string badNumberOfCardsErrorMessage(unsigned nGivenCards);
 
 public:
