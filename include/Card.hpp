@@ -122,6 +122,7 @@ private:
 public:
     explicit Card(const sf::RenderWindow& parentWindow, const std::string& filepath, const sf::Vector2f& position = {});
     explicit Card(const sf::RenderWindow& parentWindow, const std::string_view& filepath, const sf::Vector2f& position = {});
+    Card(const Card& other);
     Card();
 
     Card& operator=(const Card& other);

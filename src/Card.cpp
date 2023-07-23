@@ -27,12 +27,20 @@ Card::Card(const sf::RenderWindow& parentWindow, const std::string_view& filepat
     Card::Card(parentWindow, std::string{ filepath }, position)
 {}
 
+Card::Card(const Card& other) :
+    parentWindow{ other.parentWindow },
+    filepath{ other.filepath },
+    position{ other.position }
+{
+    loadTexture();
+}
+
 Card::Card() {}
 
 Card& Card::operator=(const Card& other) {
+    parentWindow = other.parentWindow;
     filepath = other.filepath;
     position = other.position;
-    parentWindow = other.parentWindow;
     loadTexture();
     return *this;
 }
