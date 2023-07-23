@@ -4,10 +4,11 @@
 #include <format>
 #include <stdexcept>
 #include <string>
+#include <SFML/Graphics.hpp>
 #include "Card.hpp"
 
 template<unsigned Size>
-class Deck {
+class Deck : public sf::Drawable {
 public:
     static constexpr unsigned DECK_SIZE{ Size };
 
