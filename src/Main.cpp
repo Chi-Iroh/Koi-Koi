@@ -1,7 +1,7 @@
 #include <format>
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "../include/Card.hpp"
+#include "../include/DrawPile.hpp"
 
 int main() {
     const sf::VideoMode windowSize{ 1'000, 1'000 };

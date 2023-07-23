@@ -2,6 +2,7 @@ VPATH	=	src/
 
 SRC 	=					\
 Card.cpp					\
+DrawPile.cpp				\
 Main.cpp
 
 OBJ =   $(addprefix obj/, $(SRC:.cpp=.o))

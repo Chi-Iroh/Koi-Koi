@@ -3,14 +3,13 @@
 #include <random>
 #include "../include/DrawPile.hpp"
 
-DrawPile::DrawPile(const std::initializer_list<Card>& cards) {
-    const auto nGivenCards{ cards.size() };
-
-    if (nGivenCards != 40) {
-        throw std::runtime_error(std::format("DrawPile initialized with {} cards (40 expected) !", nGivenCards));
-    }
-    std::copy(cards.begin(), cards.end(), this->cards.begin());
+std::string DrawPile::badNumberOfCardsErrorMessage(unsigned nGivenCards) {
+    return std::format("DrawPile initialized with {} cards ({} expected) !", nGivenCards, DECK_SIZE);
 }
+
+DrawPile::DrawPile(std::initializer_list<Card> cards) :
+    Deck<40>(cards)
+{}
 
 Card DrawPile::draw() {
     static unsigned lastIndex{ N_DRAW_PILE_CARDS - 1 };
